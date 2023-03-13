@@ -38,6 +38,7 @@ After my Queue has been succesfully created, I moved to the next step of designi
 
 ## Step 2: I designed a workflow that describes how I want my E-commerce order be processed using AWS Step Functions. 
 Workflow describes a process as a series of discrete tasks that can be repeated again and again.
+
 I designed my workflow in AWS Step Functions. The workflow will request verification of inventory from a microservice. Many microservices uses a queue to receive requests. I used an AWS Lambda function to represent the microservice in this project.
 
 Next, I opened the AWS Step Function Console by typing and searching on the searchbar.
@@ -53,7 +54,9 @@ To define my state machine I selected "Write your workflow in code" because I ha
 ![Screenshot (253)](https://user-images.githubusercontent.com/99415191/224594865-029a1d33-46fe-402e-8bea-3dac245c0a8c.png)
 
 "What the definition does? It uses a task state to put a message on an SQS queue. This task state is configured for a callback pattern. When you append .waitForTaskToken to your resource, Step Functions will add a task token to the JSON payload and wait for a callback. The microservice can return a result to Step Functions by calling the Step Functions API."
-...I then copied the URL of my SQS queue from the SQS console and paste it into my State machine definition.
+
+I then copied the URL of my SQS queue from the SQS console and paste it into my State machine definition.
+
 I then clicked the refresh butteon to allow the step function translate the ASL state machine into visual workflow
 
 ![Screenshot (255)](https://user-images.githubusercontent.com/99415191/224594918-69411b2b-fb7c-4172-968b-7ffedae47846.png)
