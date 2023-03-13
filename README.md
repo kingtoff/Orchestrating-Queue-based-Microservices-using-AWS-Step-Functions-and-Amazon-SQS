@@ -35,3 +35,15 @@ After my Queue has been succesfully created, I moved to the next step of designi
 
 
 ![Screenshot (251)](https://user-images.githubusercontent.com/99415191/224584962-3a1afc8b-cb32-41c5-b484-17ca70e90f5e.png)
+
+## Step 2: I designed a workflow that describes how I want my E-commerce order be processed using AWS Step Functions. 
+Workflow describes a process as a series of discrete tasks that can be repeated again and again
+I designed my workflow in AWS Step Functions. The workflow will request verification of inventory from a microservice. Many microservices uses a queue to receive requests. I used an AWS Lambda function to represent the microservice in this project.
+...Next, I opened the AWS Step Function Console by typing and searching on the searchbar
+
+...Thereafter, I clicked on "create state machine"
+...To define my state machine I selected "Write your workflow in code" because I have my custom definition
+...I replaced the contents of the State machine definition window with the Amazon States Language (ASL) state machine definition in code file. Amazon States Language is a JSON-based, structured language used to define your state machine.
+"What the definition does? It uses a task state to put a message on an SQS queue. This task state is configured for a callback pattern. When you append .waitForTaskToken to your resource, Step Functions will add a task token to the JSON payload and wait for a callback. The microservice can return a result to Step Functions by calling the Step Functions API."
+...I then copied the URL of my SQS queue from the SQS console and paste it into my State machine definition
+
