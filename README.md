@@ -109,3 +109,37 @@ Workflow describes a process as a series of discrete tasks that can be repeated 
 
 7. My lambda function is successfully created
 ![Screenshot (270)](https://user-images.githubusercontent.com/99415191/224697848-a4c81631-9e6d-4cdc-ab82-53b14397e049.png)
+
+8. I replaced the default function in the source code with my custom code.
+9.  After replacing it I saved changes and deployed my code
+![Screenshot (271)](https://user-images.githubusercontent.com/99415191/224818909-6174fae9-c1f6-4531-9381-5ba1165b3296.png)
+![Screenshot (272)](https://user-images.githubusercontent.com/99415191/224818936-d7172aaf-d55a-4b7d-b16c-01751fabc15f.png)
+10. I used SQS as my lambda triggerby selecting lambda trigger as SQS queue after copying the ARN of my SQS queue, and I set the toggle to enable "MyOrder", leaving other settings as default and I clicked "add trigger".
+![Screenshot (273)](https://user-images.githubusercontent.com/99415191/224821395-7aa6cc18-5231-43ce-9c81-bd39afe07ba1.png)
+
+![Screenshot (274)](https://user-images.githubusercontent.com/99415191/224821400-77a4b9cb-fb0d-4e61-b6f3-629c5a24749d.png)
+
+11. I  enable My Order trigger
+![Screenshot (280)](https://user-images.githubusercontent.com/99415191/224821421-8e9c2055-0e67-4541-b3ba-d634e4c5c59c.png)
+
+12. My Order Trigger was successfully added to trigger My "Inventory" lambda funtion
+
+![Screenshot (275)](https://user-images.githubusercontent.com/99415191/224821407-331607f1-a0cb-4ca8-acd3-845c5444cac1.png)
+
+## Final Step: is to execute the workflow of everything we have created so far, therefore to test the workflow
+1. I clicked on the step functions console and clicked on the "Inventory State Machine" that was created earlier
+
+![Screenshot (276)](https://user-images.githubusercontent.com/99415191/224824889-893ede04-a202-4602-bc7b-fbefe8ec4756.png)
+
+2. I clicked on "start execution", leaving other settings as default
+![Screenshot (277)](https://user-images.githubusercontent.com/99415191/224824900-347dae0f-ca02-4316-a778-54987cd10d26.png)
+
+3. The output of "My Inventory State Machine" gave an Execution Status as "succeeded"
+
+![Screenshot (281)](https://user-images.githubusercontent.com/99415191/224826887-6cc1a169-9c08-4e11-977a-da875d4a66e5.png)
+
+![Screenshot (282)](https://user-images.githubusercontent.com/99415191/224826898-8f6cc022-2bb5-4f32-9c5a-1090f8b73271.png)
+
+![Screenshot (283)](https://user-images.githubusercontent.com/99415191/224826902-ca4e9e89-77a2-40fc-a582-7782f77b2cb3.png)
+
+
