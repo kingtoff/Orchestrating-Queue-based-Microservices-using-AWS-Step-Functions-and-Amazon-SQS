@@ -83,6 +83,7 @@ Workflow describes a process as a series of discrete tasks that can be repeated 
  ![Screenshot (260)](https://user-images.githubusercontent.com/99415191/224697795-7323dd89-023a-4dde-b8c0-5840a0c271f3.png)
 4. In the permissions policies, I searched and attached "AmazonSQSFullAccess" and "AmazonSQSFullAccess" policies to it
 ![Screenshot (261)](https://user-images.githubusercontent.com/99415191/224697801-e96553ff-a325-4a2b-b49b-6d679880fc74.png)
+
 ![Screenshot (262)](https://user-images.githubusercontent.com/99415191/224697806-f25dcc4e-9b2e-43e2-a489-1a80caa22f53.png)
 5. I clicked on "Create role"
  ![Screenshot (264)](https://user-images.githubusercontent.com/99415191/224697821-2a9399af-fa7e-45fd-8dd3-755d82e1d7d5.png)
@@ -94,5 +95,17 @@ Workflow describes a process as a series of discrete tasks that can be repeated 
 ![Screenshot (265)](https://user-images.githubusercontent.com/99415191/224697824-50a1d1cd-dde4-4de9-9bfd-633408bb0fff.png)
 
 ## Step 4: Creating Microservices with AWS lambda Functions. ###The AWS lambda function will act as an inventory microservices. The lambda function retrieves messages for SQS and will return a message to Step Function that represents the result of the request. The lambda function is in the code file
+1. I clicked services, then click on compute then clicked on lambda
+![Screenshot (266)](https://user-images.githubusercontent.com/99415191/224697830-00ef706f-283f-44bf-bed3-9b056610bd49.png)
+2. I then clicked on "Create a function"
+3. I left it at "Author from scratch"
+![Screenshot (267)](https://user-images.githubusercontent.com/99415191/224697834-7b0fc17f-4753-4151-ad50-543ffd6e296e.png)
+4. I configured my lambda function setting my runtime as "Node.js 18x"
+![Screenshot (268)](https://user-images.githubusercontent.com/99415191/224697839-2c2a0620-e58e-4a0d-aa0f-5582121d5b4d.png)
 
+5. For my Role, I clicked on  "Use an existing role" and I selected "inventory-lambda-role"
+6. 6. I gave my function name as "Inventory"
+![Screenshot (269)](https://user-images.githubusercontent.com/99415191/224697840-5bbcb892-c788-429f-a3c6-6f9d7602aaa9.png)
 
+7. My lambda function is successfully created
+![Screenshot (270)](https://user-images.githubusercontent.com/99415191/224697848-a4c81631-9e6d-4cdc-ab82-53b14397e049.png)
