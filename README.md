@@ -61,11 +61,38 @@ Workflow describes a process as a series of discrete tasks that can be repeated 
 
 ![Screenshot (255)](https://user-images.githubusercontent.com/99415191/224594918-69411b2b-fb7c-4172-968b-7ffedae47846.png)
 
-8. I configured and named my state machine "Inventory-Sate_Machine"
+8. I configured(added an IAM role) and named my state machine "Inventory-Sate_Machine"
 
 ![Screenshot (256)](https://user-images.githubusercontent.com/99415191/224594923-1ec33774-71d3-487d-a783-22071155b630.png)
 
 9. My state machine is successfully created
 
 ![Screenshot (257)](https://user-images.githubusercontent.com/99415191/224594927-b56ea54c-4365-4d77-ae91-d86e802065b6.png)
+
 ## Step 3: Creating IAM roles for my workflow(Roles for services are used when you want a service to access or interact with another service or services)
+
+1. I opened the IAM management console to create an IAM role that allows lambda access Step Functions and SQS
+
+![Screenshot (258)](https://user-images.githubusercontent.com/99415191/224697775-30e8ddfe-42c7-42aa-89dc-050392327854.png)
+
+2. I scrollled to Roles and clicked on it, created a role
+![Screenshot (259)](https://user-images.githubusercontent.com/99415191/224697789-9f3fb161-7e52-408f-8098-62ffb6a51393.png)
+
+3. I selected AWS service and then selected  lambda, then click on "Next:Permissions"
+
+ ![Screenshot (260)](https://user-images.githubusercontent.com/99415191/224697795-7323dd89-023a-4dde-b8c0-5840a0c271f3.png)
+4. In the permissions policies, I searched and attached "AmazonSQSFullAccess" and "AmazonSQSFullAccess" policies to it
+![Screenshot (261)](https://user-images.githubusercontent.com/99415191/224697801-e96553ff-a325-4a2b-b49b-6d679880fc74.png)
+![Screenshot (262)](https://user-images.githubusercontent.com/99415191/224697806-f25dcc4e-9b2e-43e2-a489-1a80caa22f53.png)
+5. I clicked on "Create role"
+ ![Screenshot (264)](https://user-images.githubusercontent.com/99415191/224697821-2a9399af-fa7e-45fd-8dd3-755d82e1d7d5.png)
+ 
+6. I entered the role name as "inventory-lambda-role"
+
+7. My "inventory lambda role" is successfully created
+
+![Screenshot (265)](https://user-images.githubusercontent.com/99415191/224697824-50a1d1cd-dde4-4de9-9bfd-633408bb0fff.png)
+
+## Step 4: Creating Microservices with AWS lambda Functions. ###The AWS lambda function will act as an inventory microservices. The lambda function retrieves messages for SQS and will return a message to Step Function that represents the result of the request. The lambda function is in the code file
+
+
