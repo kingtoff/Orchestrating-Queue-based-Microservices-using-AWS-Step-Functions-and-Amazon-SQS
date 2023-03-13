@@ -40,11 +40,28 @@ After my Queue has been succesfully created, I moved to the next step of designi
 Workflow describes a process as a series of discrete tasks that can be repeated again and again.
 I designed my workflow in AWS Step Functions. The workflow will request verification of inventory from a microservice. Many microservices uses a queue to receive requests. I used an AWS Lambda function to represent the microservice in this project.
 
-...Next, I opened the AWS Step Function Console by typing and searching on the searchbar.
+Next, I opened the AWS Step Function Console by typing and searching on the searchbar.
 
-...Thereafter, I clicked on "create state machine".
-...To define my state machine I selected "Write your workflow in code" because I have my custom definition.
-...I replaced the contents of the State machine definition window with the Amazon States Language (ASL) state machine definition in code file. Amazon States Language is a JSON-based, structured language used to define your state machine.
+Thereafter, I clicked on "create state machine".
+
+To define my state machine I selected "Write your workflow in code" because I have my custom definition.
+
+![Screenshot (252)](https://user-images.githubusercontent.com/99415191/224594931-9f09b8ce-f160-4a15-b9a9-d74e0aed8296.png)
+
+  I replaced the contents of the State machine definition window with the Amazon States Language (ASL) state machine definition in code file. Amazon States Language is a JSON-based, structured language used to define your state machine.
+  
+![Screenshot (253)](https://user-images.githubusercontent.com/99415191/224594865-029a1d33-46fe-402e-8bea-3dac245c0a8c.png)
+
 "What the definition does? It uses a task state to put a message on an SQS queue. This task state is configured for a callback pattern. When you append .waitForTaskToken to your resource, Step Functions will add a task token to the JSON payload and wait for a callback. The microservice can return a result to Step Functions by calling the Step Functions API."
 ...I then copied the URL of my SQS queue from the SQS console and paste it into my State machine definition.
+I then clicked the refresh butteon to allow the step function translate the ASL state machine into visual workflow
 
+![Screenshot (255)](https://user-images.githubusercontent.com/99415191/224594918-69411b2b-fb7c-4172-968b-7ffedae47846.png)
+
+I configured and named my state machine "Inventory-Sate_Machine"
+
+![Screenshot (256)](https://user-images.githubusercontent.com/99415191/224594923-1ec33774-71d3-487d-a783-22071155b630.png)
+
+My state machine is successfully created
+
+![Screenshot (257)](https://user-images.githubusercontent.com/99415191/224594927-b56ea54c-4365-4d77-ae91-d86e802065b6.png)
