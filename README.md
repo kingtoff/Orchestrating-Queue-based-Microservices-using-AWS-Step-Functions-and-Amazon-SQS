@@ -15,16 +15,23 @@ AWS lambda is serverless computing resource. It is used to run codes without pro
 
 ![Screenshot (243)](https://user-images.githubusercontent.com/99415191/224582700-748a3f1d-a2e1-46ac-b7f8-25591b979634.png)
 
+
 ![Screenshot (246)](https://user-images.githubusercontent.com/99415191/224583986-ce02e073-3b82-4ccc-ad5b-f09fcc5b1a6c.png)
+
 
 ... Next I configure my Queue named "MyOrder", I chose the queue type as standard and left other configuration settings such as visibility timeout, message retention period as default and created "MyOrder" queue
 
+
 ![Screenshot (247)](https://user-images.githubusercontent.com/99415191/224584887-b5144ea6-2cc9-4b16-91dd-916a704cfafd.png)
+
 
 ![Screenshot (248)](https://user-images.githubusercontent.com/99415191/224584954-3da2ac24-cecf-4dbb-b53a-95c11ffc367e.png)
 
+
 ![Screenshot (250)](https://user-images.githubusercontent.com/99415191/224584959-21007025-f7e7-44a5-95aa-4cf2aa08cd86.png)
 
+
 After my Queue has been succesfully created, I moved to the next step of designing a workflow of how my I want the e-commerce order to be processed
+
 
 ![Screenshot (251)](https://user-images.githubusercontent.com/99415191/224584962-3a1afc8b-cb32-41c5-b484-17ca70e90f5e.png)
